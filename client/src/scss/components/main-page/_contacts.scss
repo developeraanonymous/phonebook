@@ -1,0 +1,77 @@
+.main__contacts {
+	.__container {
+		margin: 0 auto;
+		max-width: 620px;
+	}
+}
+
+.contacts__list {
+	height: 63vh;
+	overflow-y: auto;
+	.__container {
+		height: auto;
+		padding: 10px;
+	}
+}
+
+.contacts__row {
+	&.__wrapper {
+		&:not(:last-child) {
+			margin-bottom: 30px;
+		}
+	}
+	> .__container {
+		display: flex;
+		justify-content: space-between;
+		box-shadow: 0 4px 4px hsla(0, 0%, 0%, 0.2);
+	}
+}
+
+.contacts__col {
+	&:last-child {
+		display: flex;
+		align-items: center;
+	}
+}
+
+.contacts__item {
+	&:first-child {
+		font-size: 1.3rem;
+		font-weight: bold;
+	}
+}
+
+.contacts__button {
+	cursor: pointer;
+	display: inline-block;
+	height: 25px;
+	width: 25px;
+	transition: 0.2s ease;
+}
+.edit {
+	background: url('../../../assets/pencil-938.svg') no-repeat;
+	background-size: contain;
+	&:hover {
+		background: url('../../../assets/h-pencil-938.svg') no-repeat;
+		background-size: contain;
+	}
+}
+.trash {
+	background: url('../../../assets/garbage-bin-10419.svg') no-repeat;
+	background-size: contain;
+	&:hover {
+		background: url('../../../assets/h-garbage-bin-10419.svg') no-repeat;
+		background-size: contain;
+	}
+	margin-left: 20px;
+}
+
+.contacts__update {
+	margin: 0 auto;
+	cursor: pointer;
+	display: block;
+	padding: 5px 15px;
+	border: none;
+	background-color: $accent-color;
+	border-radius: 5px;
+}

@@ -1,0 +1,81 @@
+@mixin size($width, $height) {
+    width: $width;
+    height: $height;
+}
+
+@mixin position(
+    $position,
+    $topBottom,
+    $topBottomValue,
+    $leftRight,
+    $leftRightValue,
+    $z-index: 0
+) {
+    position: $position;
+    @if $topBottom==top {
+        top: $topBottomValue;
+    } @else if $topBottom==bottom {
+        bottom: $topBottomValue;
+    }
+
+    @if $leftRight==left {
+        left: $leftRightValue;
+    } @else if $leftRight==right {
+        right: $leftRightValue;
+    }
+    z-index: $z-index;
+}
+
+@mixin font($fontSize, $fontWeight) {
+    font-size: $fontSize;
+    font-weight: $fontWeight;
+}
+
+@mixin flex($display, $justifyContent, $alignItems) {
+    display: $display;
+    justify-content: $justifyContent;
+    align-items: $alignItems;
+}
+
+@mixin grid($gap...) {
+    display: grid;
+    grid-gap: $gap;
+}
+
+@mixin element(
+    $topBottom,
+    $topBottomValue,
+    $leftRight,
+    $leftRightValue,
+    $width,
+    $height,
+    $backgroundSize
+) {
+    content: '';
+    position: absolute;
+    @if $topBottom==top {
+        top: $topBottomValue;
+    } @else if $topBottom==bottom {
+        bottom: $topBottomValue;
+    }
+
+    @if $leftRight==left {
+        left: $leftRightValue;
+    } @else if $leftRight==right {
+        right: $leftRightValue;
+    }
+    width: $width;
+    height: $height;
+    background-repeat: no-repeat;
+    background-size: $backgroundSize;
+}
+
+@mixin background($size, $position...) {
+    // background-image: $image;
+    background-position: $position;
+    background-size: $size;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-origin: padding-box;
+    background-clip: border-box;
+}

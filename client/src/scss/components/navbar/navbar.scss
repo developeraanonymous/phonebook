@@ -1,0 +1,42 @@
+.page__nav {
+	box-shadow: $light-shadow;
+	color: $color;
+	// font-weight: 400;
+	.nav__button {
+		background-color: inherit;
+		font-size: 1.5rem;
+		transform: scale(1);
+		transition: transform 0.2s ease;
+		&:hover {
+			transform: scale(1.1);
+		}
+	}
+}
+
+.nav__items {
+	background-color: $accent-color;
+	> .__container {
+		display: flex;
+		justify-content: space-around;
+	}
+}
+
+.nav__item {
+	&:first-child {
+		flex: 1 1 90%;
+	}
+	&:last-child {
+		flex: 0 0 10%;
+		.__container {
+			height: 100%;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+	}
+	> .__container {
+		h1 {
+			font-size: 1.5rem;
+		}
+	}
+}

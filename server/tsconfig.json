@@ -1,0 +1,20 @@
+{
+  "compilerOptions": {
+    "target": "es6",
+    "module": "CommonJS",
+    // "outDir": "./dist",              /* Директория вывода скомпил. JS */
+    // "rootDir": "./src",              /* Корень, где лежит Index.ts */
+    "strict": false,
+    "moduleResolution": "node",              /* позволяет нам компилировать модули ES6 в модули commonjs. */
+    "esModuleInterop": true,                /* позволяет нам компилировать модули ES6 в модули commonjs. */
+    "resolveJsonModule": true               /* позволяет нам импортировать json */,
+    "forceConsistentCasingInFileNames": true,
+    "strictFunctionTypes": false,
+    "strictNullChecks": true,
+    "noImplicitAny": true,
+    "noImplicitThis": true,
+  },
+  "exclude": [
+    "./node_modules"
+  ]
+}

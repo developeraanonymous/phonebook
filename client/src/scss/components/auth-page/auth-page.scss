@@ -1,0 +1,69 @@
+.page__auth {
+	padding-top: 15vh;
+	height: 100%;
+	@include adaptive('margin-left', 16.75, 1.25, 1);
+	@include adaptive('margin-right', 16.75 /* 10px */, 1.25 /* 7.5px */, 1);
+	h3 {
+		font-size: 1.5rem;
+		text-align: center;
+		margin-bottom: 20px;
+	}
+	// max-width: 40vw;
+	.__container {
+		display: flex;
+		flex-direction: column;
+	}
+}
+
+.auth__form {
+	background-color: inherit;
+	font-size: 1.3rem;
+}
+
+.auth__input {
+}
+
+.auth__input {
+	border-radius: 10px;
+	background-color: $color;
+	border: 1px solid $accent-color;
+	color: rgb(148, 148, 148);
+	padding: 0 10px;
+	line-height: 2.4;
+	margin-bottom: 40px;
+	&:last-child {
+		margin-bottom: 40px;
+	}
+	&::placeholder {
+		background-color: $color;
+	}
+}
+
+.auth__buttons {
+	.__container {
+		display: flex;
+		justify-content: space-around;
+		flex-direction: row;
+	}
+}
+
+.auth__button {
+	background-color: $accent-color;
+	padding: 10px 15px;
+	border-radius: 10px;
+	transition: 0.4s ease-out;
+	transform: scale(1);
+	&:hover {
+		background-color: lighten($accent-color, 10%);
+		transform: scale(1.02);
+	}
+	&_border {
+		background-color: transparent;
+		border: 1px solid $accent-color;
+		color: $accent-color;
+		&:hover {
+			color: $color;
+			transform: scale(1.02);
+		}
+	}
+}

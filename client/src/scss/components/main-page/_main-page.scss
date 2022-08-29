@@ -1,0 +1,26 @@
+.page__main {
+	&.__wrapper {
+	}
+	.__container {
+		margin-top: 20px;
+	}
+}
+
+.overlay {
+	transition: all 400ms ease-out;
+	&.show {
+		background-color: rgba(0, 0, 0, 0.139);
+		backdrop-filter: blur(1.5px);
+		position: fixed;
+		width: 100%;
+		height: 100vh;
+		left: 0;
+		top: 0;
+		z-index: 2;
+	}
+}
+
+@import '_search';
+@import '_input';
+@import '_contacts';
+@import '_modal';

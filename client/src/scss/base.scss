@@ -1,0 +1,61 @@
+:root {
+	overflow-y: hidden;
+	&::-webkit-scrollbar {
+		width: 0;
+	}
+	scrollbar-width: none;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;400&display=swap');
+
+body {
+	font-family: 'Nunito', sans-serif;
+	font-weight: 200;
+	background: $color;
+	line-height: 2.2;
+	//color: rgb(171, 171, 171);
+	color: $font-color;
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+
+
+
+.page {
+	> .__container {
+		height: calc(100vh - 40px);
+		display: grid;
+		grid-template: auto 1fr / 1fr;
+		background-color: $middle-color;
+		border-radius: 20px;
+		box-shadow: $border-shadow;
+		padding-bottom: 5px;
+		overflow-y: hidden;
+	}
+}
+
+.container {
+	margin: 0 auto;
+	max-width: $maxWidthContainer + rem;
+	@include adaptive('padding-left', 0.625 /* 10px */, 0.4688 /* 7.5px */, 1);
+	@include adaptive('padding-right', 0.625 /* 10px */, 0.4688 /* 7.5px */, 1);
+}
+
+button {
+	border: none;
+	cursor: pointer;
+}
+.button_blue{
+	background: $accent-color;
+}
+
+.loading{
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%,-50%);
+}
+
+@import './components/navbar/navbar';
+@import './components/auth-page/auth-page';
+@import "components/main-page/main-page";

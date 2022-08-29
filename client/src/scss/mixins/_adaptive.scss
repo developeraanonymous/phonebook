@@ -1,0 +1,90 @@
+//Адаптивный миксин в "РЭМАХ"
+@mixin adaptive($property, $pcSize, $mobSize, $type) {
+	// Допустим => (Это прописываем в переменных)
+	// $pcWidth: 1920px
+	// $pcWidthContainer: 1200px
+	$addSize: $pcSize - $mobSize;
+	@if $type==1 {
+		// Только, если меньше размера максимальной ширины ограничивающего контейнера
+		#{$property}: $pcSize + rem;
+		@media (max-width: #{$maxWidthContainer + rem}) {
+			#{$property}: calc(
+				#{$mobSize + rem} + #{$addSize} *
+					((100vw - 20rem /* 320px */) / #{$maxWidthContainer - 20})
+			);
+		}
+	} @else if $type==2 {
+		// Только, если больше размера максимальной ширины
+		#{$property}: $pcSize + rem;
+		@media (min-width: #{$maxWidthContainer + rem}) {
+			#{$property}: calc(
+				#{$mobSize + rem} + #{$addSize} *
+					((100vw - 20rem /* 320px */) / #{$maxWidth - 20})
+			);
+		}
+	} @else {
+		// ВСЕГДА!! (Пляшем от ширины макета = обычно 1440 - для ноутов)
+		#{$property}: calc(
+			#{$mobSize +
+				rem} +
+				#{$addSize} *
+				((100vw - 20rem /* 320px */) / #{$maxWidth - 20})
+		);
+	}
+}
+// Вот пример этой формулы: font-size: calc(10px + (42 - 10) * ((100vw - 320px) / (1200 - 320)));
+// @include adaptive(указываем макетное значение например 40, указываем конечное на телефоне 24, и номер типа(для "else" значение = 0))
+// @include adaptive("font-size", 180, 30, 0);
+@mixin opacity($property, $start, $end) {
+	$addSize: $start - $end;
+	#{$property}: $start;
+	@media (max-width: #{$maxWidthContainer + rem}) {
+		#{$property}: calc(
+			#{$end} + #{$addSize} *
+				((100vw - 20rem /* 320px */) / #{$maxWidthContainer - 20})
+		);
+	}
+}
+// @mixin title
+// 	font-size: 2.625rem
+// 	font-weight: 400
+// 	color: red
+
+// @mixin darktitle
+// 	font-weight: 700
+
+// @mixin button
+// 	font-size: 1.125rem
+// 	font-weight: 400
+// 	color: #fff
+// 	background-color:#00a7ff
+// 	border: 1px solid #fff
+// 	border-radius: .625rem
+// 	padding: .9375rem 1.5625rem
+
+//Адаптивный миксин в "ПИКСЕЛЯХ"
+// @mixin adaptive($property, $pcSize, $mobSize, $type){
+// 	// Допустим => (Это прописываем в переменных)
+// 	// $pcWidth: 1920px
+// 	// $pcWidthContainer: 1200px
+// 	$addSize: $pcSize - $mobSize;
+// 	@if $type==1 {
+// 	// Только, если меньше размера максимальной ширины ограничивающего контейнера
+// 		#{$property}: $pcSize + px;
+// 		@media (max-width: #{$maxWidthContainer + px}) {
+// 			#{$property}: calc(#{$mobSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidthContainer - 320}));
+// 		}
+// 	} @else if $type==2 {
+// 	// Только, если больше размера максимальной ширины
+// 		#{$property}: $pcSize + px;
+// 		@media (min-width: #{$maxWidthContainer + px}) {
+// 			#{$property}: calc(#{$mobSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidth - 320}));
+// 		}
+// 	} @else {
+// 	// ВСЕГДА!! (Пляшем от ширины макета = обычно 1440 - для ноутов)
+// 			#{$property}: calc(#{$mobSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidth - 320}));
+// 		}
+// 	}
+// Вот пример этой формулы: font-size: calc(10px + (42 - 10) * ((100vw - 320px) / (1200 - 320)));
+// @include adaptive(указываем макетное значение например 40, указываем конечное на телефоне 24, и номер типа(для "else" значение = 0))
+// @include adaptive("font-size", 180, 30, 0);

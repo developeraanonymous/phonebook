@@ -1,0 +1,63 @@
+.modal {
+	background-color: $middle-color;
+	height: 200px;
+	box-shadow: $border-shadow;
+	border-radius: 10px;
+	min-width: 400px;
+	> .__container {
+		display: flex;
+		align-items: center;
+		flex-direction: column;
+		width: 100%;
+		box-shadow: none;
+		padding: 0;
+	}
+	input {
+		width: 100%;
+		color: $accent-color;
+		background: transparent;
+		border: none;
+		border-bottom: 1px solid $accent-color;
+		line-height: 2;
+		padding: 5px 10px;
+	}
+	// flex-direction: column;
+	.main__inputs {
+		display: flex;
+		flex-direction: column;
+		width: 100%;
+		margin-bottom: 20px;
+		flex: 1 1 100%;
+	}
+	.main__input {
+		&:first-child {
+			margin: 0px 0;
+		}
+		&.wrapper {
+			margin: 0 !important;
+			&:last-child {
+				margin: 0 !important;
+			}
+		}
+		> .__container {
+			margin: 0;
+		}
+	}
+	.main__buttons {
+		flex: 0 0 15%;
+	}
+	.main__button {
+		display: block;
+		width: 100%;
+		border-radius: 5px;
+		padding: 7px 10px;
+	}
+}
+
+.main__modal {
+	position: absolute;
+	z-index: 3;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}

@@ -1,0 +1,14 @@
+@mixin adaptive-custom($property, $pcSize, $mobSize, $startPoint, $endpoint) {
+	// Допустим => (Это прописываем в переменных)
+	// $pcWidth: 1920px
+	// $pcWidthContainer: 1200px
+	$addSize: $pcSize - $mobSize;
+	// Только, если меньше размера максимальной ширины ограничивающего контейнера
+	#{$property}: $pcSize + rem;
+	@media (max-width: #{$startPoint + rem}) {
+		#{$property}: calc(
+			#{$mobSize + rem} + #{$addSize} *
+				((100vw - #{$endpoint + rem} /* 320px */) / #{$startPoint - 20})
+		);
+	}
+}

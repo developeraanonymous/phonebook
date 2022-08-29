@@ -1,0 +1,87 @@
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (max-width: 1200px) {
+}
+
+@media (min-width: 800px) {
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+
+@media only screen and (max-width: 722px) {
+	.buttons {
+		flex-direction: column !important;
+		> * {
+			text-align: center;
+			&:not(:last-child) {
+				margin-bottom: 23px;
+			}
+		}
+	}
+}
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (max-width: 992px) {
+	.page__header {
+		grid-template: 1fr / 145px 4fr minmax(140px, 1fr);
+	}
+}
+.nav-icons {
+	&__item {
+		flex: 0 1 35%;
+	}
+}
+@media only screen and (max-width: 530px) {
+	.main__form {
+		.__container {
+			display: flex;
+			flex-direction: column;
+		}
+		.main__inputs {
+			width: 100%;
+			display: flex;
+			flex-direction: column;
+			&.__wrapper {
+				margin-bottom: 20px;
+			}
+		}
+		.main__input {
+			&.__wrapper {
+				margin: 0px;
+				&:last-child {
+					margin: 0px;
+				}
+			}
+		}
+	}
+	.contacts__list {
+		height: 49vh;
+	}
+}
+
+@media only screen and (max-width: 467px) {
+	.modal {
+		min-width: 320px;
+	}
+}
+
+@media only screen and (max-width: 415px) {
+	.auth__buttons {
+		.__container {
+			flex-direction: column;
+		}
+	}
+	.auth__button {
+		&:first-child {
+			margin-bottom: 20px;
+		}
+	}
+	.auth__input {
+		&:first-child {
+			margin-bottom: 10px;
+		}
+	}
+}
+@media only screen and (max-width: 343px) {
+	.modal {
+		min-width: 300px;
+	}
+}
